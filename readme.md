@@ -89,6 +89,27 @@ The system is composed of the following components:
 
 ---
 
+## Flowchart
+The following flowchart illustrates the workflow for the proposed system:
+
+```mermaid
+digraph TD
+    A[Start] --> B[Load and preprocess 5GB dataset]
+    B --> C[Generate embeddings for text chunks]
+    C --> D[Store embeddings in Milvus]
+    D --> E[User submits a query via frontend]
+    E --> F[Convert query into an embedding]
+    F --> G[Search for top-k relevant chunks in Milvus]
+    G --> H[Pass retrieved chunks to ChatGPT]
+    H --> I[ChatGPT generates a response]
+    I --> J[Return response to user]
+    J --> K[Log query, context, and response]
+    K --> L[Collect user feedback]
+    L --> M[Prepare fine-tuning dataset] --> N[Fine-tune ChatGPT]
+```
+
+---
+
 ## Next Steps
 1. Preprocess the dataset and store embeddings in Milvus.
 2. Build a retrieval system integrated with ChatGPT.
@@ -96,3 +117,5 @@ The system is composed of the following components:
 4. Fine-tune GPT with the collected data for domain-specific optimization.
 
 ---
+
+This solution offers a robust and scalable approach to leveraging your company’s data with ChatGPT, ensuring relevance, accuracy, and continuous improvement over time.
