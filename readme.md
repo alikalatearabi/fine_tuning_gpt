@@ -93,7 +93,7 @@ The system is composed of the following components:
 The following flowchart illustrates the workflow for the proposed system:
 
 ```mermaid
-digraph TD
+flowchart TD
     A[Start] --> B[Load and preprocess 5GB dataset]
     B --> C[Generate embeddings for text chunks]
     C --> D[Store embeddings in Milvus]
@@ -105,7 +105,8 @@ digraph TD
     I --> J[Return response to user]
     J --> K[Log query, context, and response]
     K --> L[Collect user feedback]
-    L --> M[Prepare fine-tuning dataset] --> N[Fine-tune ChatGPT]
+    L --> M[Prepare fine-tuning dataset]
+    M --> N[Fine-tune ChatGPT]
 ```
 
 ---
