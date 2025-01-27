@@ -1,0 +1,6 @@
+pymilvus
+openai
+numpy
+pandas
+fastapi
+uvicorn
